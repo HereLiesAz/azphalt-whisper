@@ -1,0 +1,28 @@
+{
+  "azphalt": "0.1",
+  "id": "com.hereliesaz.azphalt.whisper",
+  "name": "Whisper",
+  "version": "1.0.0",
+  "kind": "asset",
+  "license": "MIT",
+  "compat": ">=0.1",
+  "description": "Robust multilingual speech-to-text. Uses: transcription; auto-captions / subtitles; translate-to-English; searchable spoken content.",
+  "author": "azphalt",
+  "homepage": "https://github.com/HereLiesAz/azphalt-whisper",
+  "assets": [
+    {
+      "type": "onnx",
+      "path": "",
+      "role": "speech-to-text",
+      "remoteUrl": "https://github.com/HereLiesAz/azphalt-whisper/releases/latest/download/whisper-base.onnx",
+      "modelLicense": "MIT (Whisper, OpenAI)",
+      "tags": [
+        "asr",
+        "speech-to-text",
+        "transcription",
+        "audio"
+      ]
+    }
+  ],
+  "files": {}
+}

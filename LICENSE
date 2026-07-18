@@ -1,0 +1,8 @@
+MIT
+
+This repository (the azphalt plugin manifest and packaging) is licensed under MIT.
+
+The AI model it references is a separate work under its own license:
+  MIT (Whisper, OpenAI)
+The weights are fetched from their source at install time and are not contained in this repository.
+See README.md for the model source and license.
