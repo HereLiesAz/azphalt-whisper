@@ -4,7 +4,7 @@
   "name": "Whisper",
   "version": "1.0.0",
   "kind": "asset",
-  "license": "MIT",
+  "license": "LicenseRef-Upstream-Unstated",
   "compat": ">=0.1",
   "description": "Robust multilingual speech-to-text. Uses: transcription; auto-captions / subtitles; translate-to-English; searchable spoken content.",
   "author": "HereLiesAz",
