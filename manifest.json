@@ -6,8 +6,8 @@
   "kind": "asset",
   "license": "MIT",
   "compat": ">=0.1",
-  "author": "azphalt",
   "description": "Robust multilingual speech-to-text. Uses: transcription; auto-captions / subtitles; translate-to-English; searchable spoken content.",
+  "author": "HereLiesAz",
   "homepage": "https://github.com/HereLiesAz/azphalt-whisper",
   "assets": [
     {
