@@ -21,7 +21,9 @@
         "speech-to-text",
         "transcription",
         "audio"
-      ]
+      ],
+      "checksum": "sha256-3cc32d0b2864c56ba441cecd44b00d6aea4c63e29e74b9e339ca25aed5dba63e",
+      "byteSize": 94365292
     }
   ]
 }
