@@ -2,7 +2,7 @@
   "azphalt": "0.1",
   "id": "com.hereliesaz.azphalt.whisper",
   "name": "Whisper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "kind": "asset",
   "license": "LicenseRef-Upstream-Unstated",
   "compat": ">=0.1",
@@ -11,11 +11,11 @@
   "homepage": "https://github.com/HereLiesAz/azphalt-whisper",
   "assets": [
     {
-      "type": "onnx",
+      "type": "sherpa-bundle",
       "path": "",
       "role": "speech-to-text",
-      "remoteUrl": "https://github.com/HereLiesAz/azphalt-whisper/releases/latest/download/whisper-base.onnx",
-      "modelLicense": "MIT (Whisper, OpenAI)",
+      "remoteUrl": "https://github.com/HereLiesAz/azphalt-whisper/releases/latest/download/whisper-base.zip",
+      "modelLicense": "Apache-2.0 (sherpa-onnx export) / MIT (Whisper, OpenAI)",
       "tags": [
         "asr",
         "speech-to-text",
