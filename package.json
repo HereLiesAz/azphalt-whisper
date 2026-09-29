@@ -1,6 +1,6 @@
 {
   "name": "azphalt-whisper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Robust multilingual speech-to-text.",
   "type": "module",
   "scripts": {

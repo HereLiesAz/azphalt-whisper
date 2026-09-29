@@ -1,6 +1,6 @@
 # Whisper
 
-**Whisper base (speech recognition)** — Robust multilingual speech-to-text.
+**Whisper base (speech recognition)**, as a sherpa-onnx bundle — Robust multilingual speech-to-text.
 
 An **azphalt** AI-model plugin, packaged as a `.azp` (the azphalt analogue of a VS Code `.vsix`). It is
 named for the *model*, not a single feature — the same model powers many tools, and it is **host-neutral**:
@@ -23,7 +23,9 @@ This plugin contributes the role(s): `speech-to-text`. A host routes the model b
 
 ## Model file(s)
 
-- **`whisper-base.onnx`** (role `speech-to-text`) — [upstream](https://huggingface.co/onnx-community/whisper-base/resolve/main/onnx/model.onnx)
+- **`whisper-base.zip`** (role `speech-to-text`, type `sherpa-bundle`) — `base-encoder.int8.onnx`, `base-decoder.int8.onnx`,
+  `base-tokens.txt`, repackaged flat from [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-base.tar.bz2).
+  Hosts extract it into its own folder (`whisper-base/`).
 
 Model license: **MIT (Whisper, OpenAI)**. This plugin's manifest/packaging is `MIT`.
 
@@ -34,11 +36,11 @@ The `.azp` does **not** bundle the weights. The manifest declares each model as 
 verifies them against the pinned SHA-256 — exactly how a large VS Code extension fetches its language
 server instead of shipping it inside the `.vsix`. `remoteUrl` points at this repo's own GitHub **Release**
 asset (named the exact filename the host expects); the `release` workflow fetches the upstream model,
-renames it, checksums it, and publishes it beside the packed `.azp`.
+repackages it as a zip, checksums it, and publishes it beside the packed `.azp`.
 
 ## Build / release
 
-```sh
-npm install && npm run build     # packs com.hereliesaz.azphalt.whisper-1.0.0.azp
-git tag v1.0.0 && git push --tags   # runs the release workflow: hosts the model + .azp
-```
+~~~sh
+npm install && npm run build     # packs com.hereliesaz.azphalt.whisper-1.1.0.azp
+git tag v1.1.0 && git push --tags   # runs the release workflow: hosts the model + .azp
+~~~
