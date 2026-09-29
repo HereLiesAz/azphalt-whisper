@@ -48,6 +48,21 @@ jobs:
         run: |
           npm install --no-audit --no-fund
           npm run build
+      # Sign before upload: sign-azp.yml fires on the release event, which can land before the
+      # upload finishes and then finds no .azp to sign (as happened on v1.1.0).
+      - name: Sign .azp
+        env:
+          AZP_PRIVATE_KEY: ${{ secrets.AZP_PRIVATE_KEY }}
+        run: |
+          if [ -z "$AZP_PRIVATE_KEY" ]; then echo "AZP_PRIVATE_KEY not set - leaving unsigned"; exit 0; fi
+          node --input-type=module -e '
+            import fs from "fs";
+            import { signAzp } from "@azphalt/azp";
+            for (const f of fs.readdirSync(".").filter((x) => x.endsWith(".azp"))) {
+              fs.writeFileSync(f, signAzp(fs.readFileSync(f), { privateKey: process.env.AZP_PRIVATE_KEY }));
+              console.log("signed " + f);
+            }
+          '
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
